@@ -1,5 +1,5 @@
 module.exports = function (style) {
-    style.replace(/{([^{}]*)}/gi, function(match, style){
+    return style.replace(/{([^{}]*)}/gi, function(match, style){
         var rtl_style = style.replace(/left/gi, 'lleefftt')
             .replace(/right/gi, 'left')
             .replace(/lleefftt/gi, 'right')
@@ -8,5 +8,4 @@ module.exports = function (style) {
         ;
         return '{' + rtl_style + '}';
     });
-    return style
 };
