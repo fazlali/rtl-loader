@@ -1,0 +1,25 @@
+{
+  "name": "rtl-loader",
+  "version": "1.0.0",
+  "description": "RTL loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fazlali/rtl-loader.git"
+  },
+  "author": "Amin Fazlali",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "rtl",
+    "webpack",
+    "loader"
+  ],
+  "bugs": {
+    "url": "https://github.com/fazlali/rtl-loader/issues"
+  },
+  "homepage": "https://github.com/fazlali/rtl-loader"
+}
