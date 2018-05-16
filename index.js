@@ -1,10 +1,12 @@
 module.exports = function (style) {
     return style.replace(/{([^{}]*)}/gi, function(match, style){
-        var rtl_style = style.replace(/left/gi, 'lleefftt')
+        var rtl_style = style.replace(/left/gi, '**rtl-css-left-replace**')
             .replace(/right/gi, 'left')
-            .replace(/lleefftt/gi, 'right')
-            .replace(/([^;]*radius[^:]*:\s*)([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)/gi,'$1 $3 $2 $5 $4')
-            .replace(/([^;]*(padding|margin)[^:]*:\s*)([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)/gi,'$1 $3 $6 $5 $4')
+            .replace('**rtl-css-left-replace**', 'right')
+            .replace(/([;^][\s\n]*border-radius[^:]*:\s*)([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)([\s\n]*[$;])/gi,'$1 $3 $2 $5 $4 $7')
+            .replace(/([;^][\s*\n](padding|margin)[^:]*:\s*)([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)\s+([^;\s]+)([\s\n]*[$;])/gi,'$1 $3 $6 $5 $4 $7')
+            .replace(/(translateX)\(-([^)]+)\)/gi,'$1(+$2)')
+            .replace(/(translateX)\(([^-+)]+)\)/gi,'$1(-$2)')
         ;
         return '{' + rtl_style + '}';
     });
