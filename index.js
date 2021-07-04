@@ -24,6 +24,6 @@ module.exports = function (style) {
                 return `translate(${value}, ${match[2]})`
             })
         ;
-        return `{\n${rtl_style}\n}`;
+        return `{${rtl_style}}`;
     });
 };
